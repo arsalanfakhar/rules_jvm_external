@@ -58,14 +58,17 @@ maven_install(
         "androidx.appcompat:appcompat:1.3.0",
         "androidx.core:core-ktx:1.5.0",
         "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1",
-        "androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07",
+        "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0",
         "androidx.navigation:navigation-compose:2.4.0-alpha05",
-        "androidx.paging:paging-compose:1.0.0-alpha12",
-        "androidx.paging:paging-runtime-ktx:3.0.0",
+        "androidx.paging:paging-compose:1.0.0-alpha13",
+        "androidx.paging:paging-runtime-ktx:3.1.0",
         "androidx.palette:palette-ktx:1.0.0",
-        "androidx.room:room-compiler:2.3.0",
-        "androidx.room:room-ktx:2.3.0",
-        "androidx.room:room-runtime:2.3.0",
+        "androidx.room:room-compiler:2.4.0",
+        "androidx.room:room-ktx:2.4.0",
+        "androidx.room:room-runtime:2.4.0",
+        "androidx.room:room-paging:2.4.0",
+        "androidx.paging:paging-common-ktx:3.1.0-alpha04",
+        "androidx.paging:paging-common:3.1.0-alpha04",
         "com.google.android.material:material:1.3.0",
         "com.squareup.moshi:moshi-kotlin:1.12.0",
         "com.squareup.okhttp3:logging-interceptor:4.2.1",
@@ -78,6 +81,10 @@ maven_install(
         "androidx.compose.compiler:compiler:%s" % COMPOSE_VERSION,
         "androidx.compose.runtime:runtime:%s" % COMPOSE_VERSION,
         "com.google.guava:guava:28.1-android",
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    ],
+    excluded_artifacts = [
+
     ],
     repositories = DAGGER_REPOSITORIES + [
         "https://maven.google.com",
@@ -88,6 +95,7 @@ maven_install(
         "org.jetbrains.kotlin:kotlin-reflect": "@//third_party:kotlin_reflect",
         "androidx.room:room-runtime": "@//third_party:room_runtime",
     },
+    version_conflict_policy = "pinned",
 )
 
 maven_install(

@@ -37,9 +37,10 @@ class ImageListEntryImpl @Inject constructor() : ImageListEntry() {
 
     @Composable
     override fun invoke(navController: NavController, destinations: FeatureEntries, args: Bundle?) {
+        val dataProvider=LocalDataProvider.current
         val viewModel = injectedViewModel {
             DaggerImageListComponent.builder()
-                .dataProvider(LocalDataProvider.current)
+                .dataProvider(dataProvider)
                 .build()
                 .viewModel
         }

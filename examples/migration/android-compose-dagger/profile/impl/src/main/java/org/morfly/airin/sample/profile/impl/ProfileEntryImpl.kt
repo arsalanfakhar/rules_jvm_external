@@ -35,9 +35,10 @@ class ProfileEntryImpl @Inject constructor() : ProfileEntry() {
 
     @Composable
     override fun invoke(navController: NavController, destinations: FeatureEntries, args: Bundle?) {
+        val dataProvider = LocalDataProvider.current
         val viewModel = injectedViewModel {
             DaggerProfileComponent.factory().create(
-                dataProvider = LocalDataProvider.current,
+                dataProvider = dataProvider,
                 userId = args!!.getLong(USER_ID_ARG)
             ).viewModel
         }

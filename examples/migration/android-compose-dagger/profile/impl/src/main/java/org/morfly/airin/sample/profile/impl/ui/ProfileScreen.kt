@@ -19,8 +19,8 @@ package org.morfly.airin.sample.profile.impl.ui
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.GridCells
-import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -66,7 +66,7 @@ fun ProfileScreen(viewModel: ProfileViewModel) {
         Spacer(Modifier.height(30.dp))
 
         // images
-        LazyVerticalGrid(cells = GridCells.Fixed(count = 3)) {
+        LazyVerticalGrid(columns = GridCells.Fixed(count = 3)) {
             items(images.size) { index ->
                 GridItem(imageUrl = images[index].url)
             }
